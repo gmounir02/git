@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculate(a,b) {
+            res = b==0 ? [a+b,a-b,a*b," DivisionImpossi"] : [a+b,a-b,a*b,a/b]
+            ph = a+" + "+b+" = "+res[0]+"\n"+
+                 a+" - "+b+" = "+res[1]+"\n"
+                 +a+" * "+b+" = "+res[2]+"\n"
+                 +a+" / "+b+" = "+res[3]+"\n"
+            return ph;
+            }
+        ph=calculate(70,2)
+        console.log(ph)
+    </script>
+</body>
+</html>
