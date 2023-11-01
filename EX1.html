@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Ex1
+
+        inscription=[{id:100,nom:"Ahmadi",filiére:"FS201",age:18},
+                     {id:200,nom:"jaja",filiére:"FS202",age:19},
+                     {id:300,nom:"soso",filiére:"FS201",age:21}]
+        console.log(inscription.map(etudiant => "Nom: "+etudiant.nom+"  ID: "+etudiant.id+"  Age: "+etudiant.age+"  Filiére: "+etudiant.filiére))
+        console.log(inscription.map(etudiant => "Nom: "+etudiant.nom))
+        console.log(inscription.filter(etudiant => etudiant.filiére == "FS201" && etudiant.age > 20).map(etudiant => "Nom: " + etudiant.nom + "  ID: " + etudiant.id + "  Age: " + etudiant.age + "  Filiére: " + etudiant.filiére))
+        console.log(inscription.find(etudiant=>etudiant.filiére=="FS201"))
+        moy = inscription.reduce((total, age) => total+=age.age, 0)
+        console.log(moy/inscription.length)
+        function Ajout(list) {
+            inscription2 = [...list,{id:500,nom:"Ibrahimi",filiére:"FS203",age:22}]
+            return inscription2
+        }
+        list2=Ajout(inscription)
+        console.log(inscription.map(etudiant => "Nom: "+etudiant.nom+"  ID: "+etudiant.id+"  Age: "+etudiant.age+"  Filiére: "+etudiant.filiére))
+        console.log(list2.map(etudiant => "Nom: "+etudiant.nom+"  ID: "+etudiant.id+"  Age: "+etudiant.age+"  Filiére: "+etudiant.filiére))
+        //Ex2
+
+        function calculate(a,b) {
+            res = b==0 ? [a+b,a-b,a*b," DivisionImpossi"] : [a+b,a-b,a*b,a/b]
+            ph = a+" + "+b+" = "+res[0]+"\n"+
+                 a+" - "+b+" = "+res[1]+"\n"
+                 +a+" * "+b+" = "+res[2]+"\n"
+                 +a+" / "+b+" = "+res[3]+"\n"
+            return ph;
+            }
+        ph=calculate(70,2)
+        console.log(ph)
+
+        //EX3
+        age=inscription.map(etudiant => etudiant.age)
+        max=Math.max.apply(null,age)
+        min=Math.min.apply(null,age)
+
+        console.log(min)
+        console.log(max)
+
+        //EX4
+
+    </script>
+</body>
+</html>
